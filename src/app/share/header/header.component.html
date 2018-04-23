@@ -1,0 +1,84 @@
+<header class="app-header primary">
+  <div class="container-fluid">
+    <div class="row gutters">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-3 col-4">
+        <a class="mini-nav-btn" href="#" id="app-side-mini-toggler">
+          <i class="icon-menu5"></i>
+        </a>
+        <a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
+          <i class="icon-chevron-thin-left"></i>
+        </a>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-4">
+        <a routerLink="" class="logo">
+          <h6 style="color: white;font-family: 'Abyssinica SIL';font-size: 25px;">NGO HELPING</h6>
+          <!--<img src="../../../assets/img/unify.png" alt=" Admin Dashboard" />-->
+        </a>
+      </div>
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-3 col-4">
+        <ul class="header-actions">
+
+          <li>
+            <a href="#" id="todos" data-toggle="dropdown" aria-haspopup="true">
+              <i class="icon-person_outline"></i>
+              <span class="count-label red"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="todos">
+              <ul class="stats-widget">
+
+
+                <li>
+                  <h4>user</h4>
+                  <p>Uploads <span class="text-secondary">-7%</span></p>
+                  <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
+                      <span class="sr-only">42% Complete (success)</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+              <img class="avatar" src="../../../assets/img/avatricon.jpg" alt="User Thumb" />
+              <span class="user-name" style="color: white">NGO ADMIN</span>
+              <i class="icon-chevron-small-down"></i>
+            </a>
+            <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+              <ul class="user-settings-list">
+                <li>
+                  <a routerLink="">
+                    <div class="icon">
+                      <i class="icon-account_circle"></i>
+                    </div>
+                    <p>Profile</p>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="">
+                    <div class="icon red">
+                      <i class="icon-cog3"></i>
+                    </div>
+                    <p>Settings</p>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/lock">
+                    <div class="icon yellow">
+                      <i class="icon-schedule"></i>
+                    </div>
+                    <p>Dashboard Lock</p>
+                  </a>
+                </li>
+              </ul>
+              <div class="logout-btn">
+                <a routerLink="/" class="btn btn-primary">Logout</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

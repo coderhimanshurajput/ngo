@@ -1,0 +1,96 @@
+<!-- Loading starts -->
+<!--<div id="loading-wrapper">
+<div id="loader">
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+<div class="line4"></div>
+<div class="line5"></div>
+<div class="line6"></div>
+</div>
+</div>-->
+<!-- Loading ends -->
+
+<!-- BEGIN .app-wrap -->
+<div class="app-wrap">
+  <app-header></app-header>
+  <div class="app-container">
+    <!-- BEGIN .app-side -->
+    <app-side-menu></app-side-menu>
+    <!-- BEGIN .app-main -->
+    <div class="app-main">
+      <!-- BEGIN .main-heading -->
+
+      <!-- END: .main-heading -->
+      <!-- BEGIN .main-content -->
+      <div class="main-content">
+        <div class="row gutters">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="card text-white " style="background: linear-gradient(-20deg,#A8D0E6,#374785)">
+
+              <div class="card-body">
+                <a routerLink="/add-category"><img src="../../../assets/img/icon/plus.png"></a>
+                <h4 class="card-title " align="right" style="margin-top: -48px; ">ADD CATEGORIES</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="card text-white " style="background: linear-gradient(-60deg,#f8e9a1,#f76c6c)">
+
+              <div class="card-body">
+                <a routerLink="/catergories"><img src="../../../assets/img/icon/manage.png"></a>
+                <h4 class="card-title " align="right" style="margin-top: -48px; ">MANAGE CATEGORIES</h4>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutters">
+          <div class="wrapper fadeInDown">
+
+
+
+            <div id="formContent">
+              <!-- Tabs Titles -->
+              <h2 class="active"> Add CATEGORY </h2><hr><hr>
+              <div class="row">
+                <form >
+                  <div class="col-sm-6">
+                    <input type="text" id="login" class="fadeIn second" name="addcategory" placeholder="Enter Your category Name" required="">
+                  </div>
+                  <div class="col-sm-6"style="margin-top: -67px;margin-left: 500px;">
+                    <input type="file" id="file" class="fadeIn third" name="login" placeholder="Cover Image " required="">
+                  </div>
+                  <div class="">
+                    <textarea class="fadeIn"  rows="10" placeholder=" Enter Description" name="description" style="margin-left: 0px;"></textarea>
+                  </div>
+                  <input type="submit" class="fadeIn fourth" value="Submit">
+
+                </form>
+
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <!-- END: .main-content -->
+    </div>
+    <!-- END: .app-main -->
+  </div>
+  <!-- END: .app-container -->
+  <!-- BEGIN .main-footer -->
+  <app-footer></app-footer>
+  <!-- END: .main-footer -->
+</div>
+<!-- END: .app-wrap -->
+

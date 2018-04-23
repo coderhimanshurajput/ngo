@@ -1,0 +1,171 @@
+<div class="app-wrap">
+  <app-header></app-header>
+  <div class="app-container">
+    <app-side-menu></app-side-menu>
+    <div class="app-main">
+      <div class="main-content">
+        <div class="row gutters">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="card text-white " style="background:  linear-gradient(-20deg,#A8D0E6,#374785)">
+
+              <div class="card-body">
+                <a routerLink="/add-disasters"><img src="../../../assets/img/icon/plus.png"></a>
+                <h4 class="card-title " align="right" style="margin-top: -48px; ">ADD DISASTERS</h4>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="card text-white " style="background:linear-gradient(-60deg,#f8e9a1,#f76c6c)">
+
+              <div class="card-body">
+                <a routerLink="/disasters"><img src="../../../assets/img/icon/manage.png"></a>
+                <h4 class="card-title " align="right" style="margin-top: -48px; ">MANAGE DISASTERS</h4>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutters">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+              <div class="card-header">Add Disaster</div>
+              <div class="card-body">
+                <ul class="nav nav-tabs nav-justified" id="myTab2" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab1" data-toggle="tab" href="#data" role="tab" aria-controls="home1" aria-selected="true">Data</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab1" data-toggle="tab" href="#photo" role="tab" aria-controls="profile1" aria-selected="false">Photos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab1" data-toggle="tab" href="#document" role="tab" aria-controls="contact1" aria-selected="false">Document</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent1">
+                  <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="home-tab1">
+                    <form method="get">
+
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label  class="col-form-label">Disaster Name</label>
+                              <input type="text" class="form-control" name="disaster_name" placeholder="disaster name">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label  class="col-form-label">Short Description</label>
+                              <input type="text" class="form-control" name="short_description" placeholder="Short Description">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-form-label">Description</label>
+                            <textarea  class="form-control" name="description" placeholder="Description"></textarea>
+                          </div>
+
+                          <div class="card-header">Contact Details</div>
+                          <br>
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label  class="col-form-label">Country</label>
+                              <input type="text" class="form-control" placeholder="Country" name="country">
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputState" class="col-form-label">State</label>
+                              <select id="inputState" class="form-control">
+                                <option>Choose</option>
+                                <option>1</option>
+                                <option>2</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label  class="col-form-label">City</label>
+                              <input type="text" class="form-control" placeholder="City" name="city" >
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label  class="col-form-label">Zip</label>
+                              <input type="text" class="form-control" placeholder="Zip" name="zip">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label  class="col-form-label">Address</label>
+                            <input type="text" class="form-control" name="address" placeholder="Apartment, studio, or floor">
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                      </div>
+
+                    </form>
+
+                  </div>
+
+                  <div class="tab-pane fade" id="photo" role="tabpanel" aria-labelledby="profile-tab1">
+                    <div class="card-header">Cover Image</div><br>
+                    <input type="file" name="file1" class="form-control">
+                    <div class="clearfix"></div><br><br><hr><hr>
+
+                      <div class="card-header">Photo</div><br>
+                    <div class="form-row">
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label">Photo 1</label>
+                        <input type="file" class="form-control" name="file2">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label" >Photo 2</label>
+                       <input type="file" name="file3" class="form-control">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label">Photo 3</label>
+                        <input type="file" name="file4" class="form-control" >
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label">Photo 4</label>
+                        <input type="file" class="form-control"  name="file5">
+                      </div>
+                    </div><br><br>
+
+                    <div>
+                      <p>Max Upload 4 Photos</p>
+                      <p>Min 2 photos are required</p>
+                    </div>
+
+
+
+                  </div>
+                  <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="contact-tab1">
+
+                    <div class="card-header">Document</div><br>
+                    <div class="form-row">
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label">Document 1</label>
+                        <input type="file" class="form-control" name="file2">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label" >Document 2</label>
+                        <input type="file" name="file3" class="form-control">
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label  class="col-form-label">Document 3</label>
+                        <input type="file" name="file4" class="form-control" >
+                      </div>
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

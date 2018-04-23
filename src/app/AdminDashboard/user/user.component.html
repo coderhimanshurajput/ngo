@@ -1,0 +1,142 @@
+<div class="app-wrap">
+  <app-header></app-header>
+  <div class="app-container">
+    <app-side-menu></app-side-menu>
+    <div class="app-main">
+      <div class="main-content">
+        <div class="row gutters">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+              <div class="card-header">User Details</div>
+              <div class="card-body">
+                <table class="table table-bordered m-0">
+                  <thead class="thead-inverse">
+                  <tr>
+                    <th>#</th>
+                    <th>Name </th>
+                    <th>Email ID</th>
+                    <th>Verified</th>
+                    <th>Reg Type</th>
+                    <th>Phone Number</th>
+                    <th>Donations</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{{this.User_name}}</td>
+                    <td>{{this.User_email}}</td>
+                    <td>{{this.Verfied}}</td>
+                    <td>{{this.Wtype}}</td>
+                    <td>{{this.User_mobile}}</td>
+                    <td>{{this.Donation}}</td>
+                    <td>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
+
+<!-- ===================================== user info ================================== -->
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-lg mt-0 mb-0" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">User Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="card-header" align="center"><h2>Himanshu Rajput</h2></div><br>
+        <div class="row gutters">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <pre><b>User Name:     </b><span>Himanshu Rajput</span> </pre>
+            <pre><b>Email Id :     </b><span>HimanshuRajput@gmail.com</span> </pre>
+            <pre><b>Phone Number : </b><span>99990087978</span> </pre>
+
+
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <pre><b> User ID : </b><span>vrgng45r7g8r4g546ejiem84455</span> </pre>
+            <pre><b> Created Date :</b> <span>dec 5 2017</span> </pre>
+            <pre><b> Regs. Type :</b> <span>Web Type</span> </pre>
+            <pre><b> Total Donations :</b> <span>4545545454613000</span> </pre>
+
+          </div>
+            <!--<span>-->
+              <!--<h5>Name : </h5>-->
+            <!--<p>Hiamnshu rajput</p>-->
+            <!--</span>-->
+            <!--<span>-->
+              <!--<h5>Email Id : </h5>-->
+            <!--<p>Hiamnshurajput@hi.com</p>-->
+            <!--</span>-->
+            <!--<span>-->
+              <!--<h5>Phone Number : </h5>-->
+            <!--<p>9999008798</p>-->
+            <!--</span>-->
+          </div><br><br>
+          <div class="card">
+            <table class="table table-bordered m-0">
+              <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Txn.ID</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Mode</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>s233jdmbfdbfjdi</td>
+                    <td>Eduction</td>
+                    <td>Eduction</td>
+                    <td>online</td>
+                    <td>450125665</td>
+                    <td>true</td>
+                    <td>Pass</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+
+
+
+
+
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
