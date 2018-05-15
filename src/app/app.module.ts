@@ -26,15 +26,7 @@ import { PrivacyandpolicyComponent } from './AdminDashboard/privacyandpolicy/pri
 import { AddCategoryComponent } from './AdminDashboard/add-category/add-category.component';
 import { AddDisasterComponent } from './AdminDashboard/add-disaster/add-disaster.component';
 import { AddFundraiserComponent } from './AdminDashboard/add-fundraiser/add-fundraiser.component';
-import { AuthService } from './share/auth/auth.service';
-import { AuthGuard } from './share/auth/auth.guard';
-import {AlertService} from './share/service/alert.service';
-import {AuthenticationService} from './share/service/authentication.service';
-import {UserService} from './share/service/user.service';
-
-
-
-
+import {LoginService} from './login/service';
 
 @NgModule({
   declarations: [
@@ -59,9 +51,6 @@ import {UserService} from './share/service/user.service';
     AddCategoryComponent,
     AddDisasterComponent,
     AddFundraiserComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -70,11 +59,7 @@ import {UserService} from './share/service/user.service';
     BsDatepickerModule.forRoot(),
   ],
   providers: [
-    AuthService,
-    AuthGuard,
-    AlertService,
-    AuthenticationService,
-    UserService,
+    LoginService,
   ],
   bootstrap: [AppComponent]
 })

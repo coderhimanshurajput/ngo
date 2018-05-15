@@ -27,7 +27,7 @@
           </div>
 
         </div>
-
+        <!-- form start with  -->
         <div class="row gutters">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="card">
@@ -44,40 +44,48 @@
                     <a class="nav-link" id="contact-tab1" data-toggle="tab" href="#document" role="tab" aria-controls="contact1" aria-selected="false">Document</a>
                   </li>
                 </ul>
+                <form method="get">
                 <div class="tab-content" id="myTabContent1">
+                  <!--<form method="get">-->
                   <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="home-tab1">
-                    <form method="get">
+                    <!--<form method="get">-->
 
                       <div class="card">
                         <div class="card-body">
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label  class="col-form-label">Fundraiser Name</label>
-                              <input type="text" class="form-control" name="Fundraiser_name" placeholder="Fundraiser name">
+                              <input type="text" class="form-control" name="Fundraiser_name"
+                                     oninput="this.className" placeholder="Fundraiser name">
                             </div>
                             <div class="form-group col-md-6">
                               <label  class="col-form-label">Short Description</label>
-                              <input type="text" class="form-control" name="short_description" placeholder="Short Description">
+                              <input type="text" class="form-control" name="short_description"
+                                     oninput="this.className" placeholder="Short Description">
                             </div>
 
                             <div class="form-group col-md-4">
                               <label  class="col-form-label">Goal Amount</label>
-                              <input type="text" class="form-control" name="short_description" placeholder="Goal Amount">
+                              <input type="number"class="form-control" name="short_description"
+                                     oninput="this.className" placeholder="Goal Amount">
                             </div>
                             <div class="form-group col-md-4">
                               <label  class="col-form-label">Start Date</label>
-                              <input type="text" bsDatepicker class="form-control" name="startDate">
+                              <input type="date"  class="form-control"
+                                     oninput="this.className" name="startDate">
 
                             </div>
                             <div class="form-group col-md-4">
                               <label  class="col-form-label">End Date</label>
-                              <input type="text" bsDatepicker class="form-control" name="endDate">
+                              <input type="text" bsDatepicker class="form-control" name="endDate"
+                                     oninput="this.className" >
 
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-form-label">Description</label>
-                            <textarea  class="form-control" name="description" placeholder="Description"></textarea>
+                            <textarea  class="form-control" name="description"
+                                       oninput="this.className"  placeholder="Description"></textarea>
                           </div>
 
                           <div class="card-header">Contact Details</div>
@@ -85,11 +93,12 @@
                           <div class="form-row">
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">Country</label>
-                              <input type="text" class="form-control" placeholder="Country" name="country">
+                              <input type="text" class="form-control" placeholder="Country"
+                                     oninput="this.className" name="country">
                             </div>
                             <div class="form-group col-md-3">
                               <label for="inputState" class="col-form-label">State</label>
-                              <select id="inputState" class="form-control">
+                              <select id="inputState" class="form-control" oninput="this.className">
                                 <option>Choose</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -97,51 +106,52 @@
                             </div>
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">City</label>
-                              <input type="text" class="form-control" placeholder="City" name="city" >
+                              <input type="text" class="form-control" placeholder="City"
+                                     oninput="this.className" name="city" >
                             </div>
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">Zip</label>
-                              <input type="text" class="form-control" placeholder="Zip" name="zip">
+                              <input type="text" class="form-control" placeholder="Zip"
+                                     oninput="this.className" name="zip">
                             </div>
                           </div>
 
                           <div class="form-group">
                             <label  class="col-form-label">Address</label>
-                            <input type="text" class="form-control" name="address" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control" name="address"
+                                   oninput="this.className" placeholder="Apartment, studio, or floor">
                           </div>
-
-                          <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                       </div>
 
-                    </form>
+
 
                   </div>
 
                   <div class="tab-pane fade" id="photo" role="tabpanel" aria-labelledby="profile-tab1">
                     <div class="card-header">Cover Image</div><br>
-                    <input type="file" name="file1" class="form-control">
+                    <input type="file" name="upload[]" class="form-control" multiple="multiple">
                     <div class="clearfix"></div><br><br><hr><hr>
 
-                    <div class="card-header">Photo</div><br>
+                    <!-- <div class="card-header">Photo</div><br>
                     <div class="form-row">
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 1</label>
-                        <input type="file" class="form-control" name="file2">
+                        <input type="file" class="form-control" name="upload[]">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label" >Photo 2</label>
-                        <input type="file" name="file3" class="form-control">
+                        <input type="file" name="upload[]" class="form-control">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 3</label>
-                        <input type="file" name="file4" class="form-control" >
+                        <input type="file" name="upload[]" class="form-control" >
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 4</label>
-                        <input type="file" class="form-control"  name="file5">
+                        <input type="file" class="form-control"  name="upload[]">
                       </div>
-                    </div><br><br>
+                    </div><br><br> -->
 
                     <div>
                       <p>Max Upload 4 Photos</p>
@@ -157,23 +167,29 @@
                     <div class="form-row">
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Document 1</label>
-                        <input type="file" class="form-control" name="file2">
+                        <input type="file" class="form-control" name="upload[]">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label" >Document 2</label>
-                        <input type="file" name="file3" class="form-control">
+                        <input type="file" name="upload[]" class="form-control">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Document 3</label>
-                        <input type="file" name="file4" class="form-control" >
+                        <input type="file" name="upload[]" class="form-control" >
                       </div>
 
                     </div>
-
+                    <button type="submit" class="btn btn-primary btn-lg text-center" onclick="" >Submit
+                      <i class="icon icon-send"></i>
+                    </button>
 
                   </div>
+
                 </div>
+
+                </form>
               </div>
+
             </div>
           </div>
         </div>
@@ -184,3 +200,4 @@
   </div>
   <app-footer></app-footer>
 </div>
+

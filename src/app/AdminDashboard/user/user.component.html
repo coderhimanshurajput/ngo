@@ -23,7 +23,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
+                  <tr *ngFor="">
                     <th scope="row">1</th>
                     <td>{{this.User_name}}</td>
                     <td>{{this.User_email}}</td>
@@ -31,6 +31,18 @@
                     <td>{{this.Wtype}}</td>
                     <td>{{this.User_mobile}}</td>
                     <td>{{this.Donation}}</td>
+                    <td>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Himanshu</td>
+                    <td>himanshurajput56@gmail.com</td>
+                    <td>true</td>
+                    <td>Mobile</td>
+                    <td>9999008798</td>
+                    <td>45651</td>
                     <td>
                       <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
                     </td>

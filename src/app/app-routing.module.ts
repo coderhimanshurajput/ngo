@@ -16,13 +16,16 @@ import {LockComponent} from './lock/lock.component';
 import {AddCategoryComponent} from './AdminDashboard/add-category/add-category.component';
 import {AddDisasterComponent} from './AdminDashboard/add-disaster/add-disaster.component';
 import {AddFundraiserComponent} from './AdminDashboard/add-fundraiser/add-fundraiser.component';
+/*import {LoggedInAuthGurard} from './share/service/login-in-route-gurard';
+import {Authservice} from './share/service/authservice';*/
 
 
 
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'dashboard', component : HomeComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component : HomeComponent, data: { title: 'Home'}},
   {path: 'catergories', component : CategoriesComponent},
   {path: 'disasters', component: DisastersComponent},
   {path: 'fundraiser', component: FundraiserComponent},
