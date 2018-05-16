@@ -1,5 +1,6 @@
  // import { FormGroup, FormControl, Validators, NgForm, FormArray } from '@angular/forms';
- import { HttpClient } from '@angular/common/http';
+ import {Component , OnInit} from '@angular/core';
+ import { HttpClient , HttpHeaders } from '@angular/common/http';
 
  import { Component, OnInit } from '@angular/core';
  import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
@@ -39,12 +40,7 @@ export class LoginComponent implements OnInit {
        });
    }
 
-   /*set session(value) {
-     this._session = value ;
-   }
-   get session() {
-     return this._session;
-   }*/
+
 
    ngOnInit(): void {
    }
@@ -52,7 +48,7 @@ export class LoginComponent implements OnInit {
    login() {
      const apiURL = `${this.API_Call}`;
      this.http.post(apiURL).subscribe((data: any) => {
-       if (data.status == 'success' && data.statusCode == 200) {
+       if (data.status === 'success' && data.statusCode === 200) {
          this.loginService.Islogin.next(true);
          if (history.length > 2) {
            this.location.back();

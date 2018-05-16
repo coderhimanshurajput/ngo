@@ -52,22 +52,22 @@
           <div class="wrapper fadeInDown">
 
 
-
             <div id="formContent">
               <!-- Tabs Titles -->
               <h2 class="active"> Add CATEGORY </h2><hr><hr>
               <div class="row">
+
                 <form >
                   <div class="col-sm-6">
-                    <input type="text" id="login" class="fadeIn second" name="addcategory" placeholder="Enter Your category Name" required="">
+                    <input type="text" id="" class="fadeIn second"  formControlName="name" name="categories_name" placeholder="Enter Your category Name" required="">
                   </div>
                   <div class="col-sm-6"style="margin-top: -67px;margin-left: 500px;">
-                    <input type="file" id="file" class="fadeIn third" name="login" placeholder="Cover Image " required="">
+                    <input type="file" id="file" class="fadeIn third"   name="categories_img" placeholder="Cover Image " required="">
                   </div>
                   <div class="">
-                    <textarea class="fadeIn"  rows="10" placeholder=" Enter Description" name="description" style="margin-left: 0px;"></textarea>
+                    <textarea class="fadeIn"  rows="10" placeholder=" Enter Description" name="categories_description" style="margin-left: 0px;"></textarea>
                   </div>
-                  <input type="submit" class="fadeIn fourth" value="Submit">
+                  <input type="submit" class="fadeIn fourth" value="Submit" (click)="category()" >
 
                 </form>
 
