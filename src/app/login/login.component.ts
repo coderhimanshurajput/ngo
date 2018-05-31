@@ -1,17 +1,11 @@
  // import { FormGroup, FormControl, Validators, NgForm, FormArray } from '@angular/forms';
  import {Component , OnInit} from '@angular/core';
  import { HttpClient , HttpHeaders } from '@angular/common/http';
-
- import { Component, OnInit } from '@angular/core';
  import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
  import {Location} from '@angular/common';
  import {Global} from '../share/service/global';
  import {LoginService} from './service';
-
-
- // import {AlertService , AuthService} from '../share/service/ConfigService';
-
-
+ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
  @Component({
    moduleId : module.id,
@@ -28,6 +22,11 @@ export class LoginComponent implements OnInit {
    private previousUrl: string;
    private API_Call = `${Global.API_Call}/admin/adminLogin`;
 
+    login: any={
+
+    };
+
+
    constructor(
      public router: Router,
      private http: HttpClient,
@@ -39,23 +38,24 @@ export class LoginComponent implements OnInit {
          this.previousUrl = e.url;
        });
    }
+        loginapi(){
+        this.http.post<any>(this.API_Call, this.login).subscribe((response)=>{
+
+          console.log(response);
+
+          if(response.success){
+            this.router.navigate(['']);
+          }
+
+        })
+
+          // console.log(this.login);
+      }
 
 
 
    ngOnInit(): void {
    }
 
-   login() {
-     const apiURL = `${this.API_Call}`;
-     this.http.post(apiURL).subscribe((data: any) => {
-       if (data.status === 'success' && data.statusCode === 200) {
-         this.loginService.Islogin.next(true);
-         if (history.length > 2) {
-           this.location.back();
-         }
-       }
-     }, (err) => {
-       alert(err.error.message || err.message);
-     });
-   }
+  
  }

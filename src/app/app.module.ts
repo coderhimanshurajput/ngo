@@ -27,6 +27,8 @@ import { AddCategoryComponent } from './AdminDashboard/add-category/add-category
 import { AddDisasterComponent } from './AdminDashboard/add-disaster/add-disaster.component';
 import { AddFundraiserComponent } from './AdminDashboard/add-fundraiser/add-fundraiser.component';
 import {LoginService} from './login/service';
+import { FormsModule } from '@angular/forms';
+import {FormControl, Validators} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import {LoginService} from './login/service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BsDatepickerModule.forRoot(),
   ],
   providers: [

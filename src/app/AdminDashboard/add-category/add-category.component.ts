@@ -27,16 +27,5 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit() {
   }
-  category() {
-    const apiURL = `${this.API_Call}`;
-    this.http.post(apiURL).subscribe((data: any) => {
-      if (data.status === 'sucess' && data.statusCode === 200 ) {
-          alert('Data save');
-      }
-    }, (err) => {
-      alert(err.error.message);
-    });
-  }
-
 
 }
