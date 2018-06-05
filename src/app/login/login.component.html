@@ -10,13 +10,13 @@
                 <a href="#" class="login-logo">
                   <h5>NGO Help</h5>
                 </a>
-                <div class="input-group">
+                <div class="input-group" >
                   <span class="input-group-addon" id="username"><i class="icon-account_circle"></i></span>
                   <input type="text" class="form-control" placeholder="Username"
                          name="email" #email="ngModel" required="" [(ngModel)]="login.email">
                 </div><br>
-                <div class="input-group">
-                  <div class="alert alert-danger">
+                <div class="input-group" *ngIf="email.touched && !email.valid">
+                  <div class="alert alert-danger" *ngIf="email.errors.required">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -26,12 +26,12 @@
                 <br>
                 <div class="input-group">
                   <span class="input-group-addon"><i class="icon-verified_user"></i></span>
-                
-                  <input type="password" placeholder="Password" 
-                         name="password" #pasword="ngModel" [(ngModel)]="login.password" required>
+
+                  <input type="password" placeholder="Password" class="form-control"
+                         name="password" #password="ngModel" [(ngModel)]="login.password" required>
                 </div><br>
-                <div class="input-group">   
-                  <div class="alert alert-danger">
+                <div class="input-group" *ngIf="password.touched && !password.valid">
+                  <div class="alert alert-danger" *ngIf="password.errors.required">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>

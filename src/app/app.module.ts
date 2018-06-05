@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BsDatepickerModule} from 'ngx-bootstrap';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule , HttpInterceptor, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {CookieService} from "ngx-cookie-service";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,8 +27,8 @@ import { PrivacyandpolicyComponent } from './AdminDashboard/privacyandpolicy/pri
 import { AddCategoryComponent } from './AdminDashboard/add-category/add-category.component';
 import { AddDisasterComponent } from './AdminDashboard/add-disaster/add-disaster.component';
 import { AddFundraiserComponent } from './AdminDashboard/add-fundraiser/add-fundraiser.component';
-import {LoginService} from './login/service';
 import { FormsModule } from '@angular/forms';
+// import { AuthInterceptor ,ABC } from "../config";
 import {FormControl, Validators} from '@angular/forms';
 
 @NgModule({
@@ -62,7 +63,10 @@ import {FormControl, Validators} from '@angular/forms';
     BsDatepickerModule.forRoot(),
   ],
   providers: [
-    LoginService,
+   /* {provide: HTTP_INTERCEPTORS, useClass: ABC, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},*/
+    CookieService,
+
   ],
   bootstrap: [AppComponent]
 })

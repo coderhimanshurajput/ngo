@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Global} from "../../share/service/global";
+
+
 
 @Component({
   selector: 'app-user',
@@ -6,10 +10,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+ private API_CALL = `${Global.API_Call}/users/getusers`;
 
-  constructor() { }
+  usertabledata =[];
+  constructor(
+
+    private http: HttpClient
+  ) { }
+
+    tabledata(){
+      this.http.get<any>(this.API_CALL).subscribe((data)=>{
+
+        console.log(data);
+        this.usertabledata = data.result;
+        console.log(this.usertabledata);
+      })
+
+    }
 
   ngOnInit() {
+
+    this.tabledata();
+
   }
 
 }

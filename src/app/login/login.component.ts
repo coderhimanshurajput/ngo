@@ -1,10 +1,8 @@
- // import { FormGroup, FormControl, Validators, NgForm, FormArray } from '@angular/forms';
  import {Component , OnInit} from '@angular/core';
  import { HttpClient , HttpHeaders } from '@angular/common/http';
  import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
- import {Location} from '@angular/common';
  import {Global} from '../share/service/global';
- import {LoginService} from './service';
+ import {CookieService} from "ngx-cookie-service";
  import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
  @Component({
@@ -14,48 +12,28 @@
    styleUrls: ['./login.component.scss']
 })
 
-
-export class LoginComponent implements OnInit {
-   // private _session: session;
-   // public login = {} ;
-   public pwdField = true;
-   private previousUrl: string;
+ export class LoginComponent implements OnInit {
    private API_Call = `${Global.API_Call}/admin/adminLogin`;
-
-    login: any={
-
-    };
-
+    login: any={};
 
    constructor(
      public router: Router,
      private http: HttpClient,
-     private loginService: LoginService,
-     private location: Location) {
-     router.events
-       .filter(event => event instanceof NavigationEnd)
-       .subscribe((e: any) => {
-         this.previousUrl = e.url;
-       });
-   }
+     private cookies: CookieService,
+     ) {}
+
         loginapi(){
         this.http.post<any>(this.API_Call, this.login).subscribe((response)=>{
-
-          console.log(response);
-
-          if(response.success){
-            this.router.navigate(['']);
+          console.log(response.success);
+          console.log(response.user.token);
+          if(response.success === true){
+            this.router.navigate(['/dashboard']);
+            this.cookies.set("token", response.user.token, 1/48)
           }
 
         })
-
-          // console.log(this.login);
       }
-
-
 
    ngOnInit(): void {
    }
-
-  
  }
