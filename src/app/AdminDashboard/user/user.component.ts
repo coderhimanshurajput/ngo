@@ -14,13 +14,12 @@ export class UserComponent implements OnInit {
 
   usertabledata =[];
   constructor(
-
     private http: HttpClient
   ) { }
 
+  /* get user data in Table*/
     tabledata(){
       this.http.get<any>(this.API_CALL).subscribe((data)=>{
-
         console.log(data);
         this.usertabledata = data.result;
         console.log(this.usertabledata);

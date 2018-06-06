@@ -53,16 +53,19 @@
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <label  class="col-form-label">Disaster Name</label>
-                              <input type="text" class="form-control" name="disaster_name" placeholder="disaster name">
+                              <input type="text" class="form-control" name="disaster_name"
+                                   #disaster_name="ngModel" [(ngModel)]="disaster.disaster_name"  placeholder="disaster name">
                             </div>
                             <div class="form-group col-md-6">
                               <label  class="col-form-label">Short Description</label>
-                              <input type="text" class="form-control" name="short_description" placeholder="Short Description">
+                              <input type="text" class="form-control" name="short_description"
+                                 #short_description="ngModel" [(ngModel)]="disaster.short_description"   placeholder="Short Description">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-form-label">Description</label>
-                            <textarea  class="form-control" name="description" placeholder="Description"></textarea>
+                            <textarea  class="form-control" name="disaster_description" #disaster_description="ngModel"
+                                       placeholder="Description" [(ngModel)]="disaster.disaster_description"></textarea>
                           </div>
 
                           <div class="card-header">Contact Details</div>
@@ -70,55 +73,92 @@
                           <div class="form-row">
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">Country</label>
-                              <input type="text" class="form-control" placeholder="Country" name="country">
+                              <input type="text" class="form-control" placeholder="Country" name="country"
+                                     #country="ngModel" [(ngModel)]="disaster.country">
                             </div>
                             <div class="form-group col-md-3">
                               <label for="inputState" class="col-form-label">State</label>
-                              <select id="inputState" class="form-control">
+                              <select id="inputState" class="form-control" name="state" #state="ngModel" [(ngModel)]="disaster.state">
                                 <option>Choose</option>
-                                <option>1</option>
-                                <option>2</option>
+                                <option>Andaman and Nicobar Islands</option>
+                                <option>Andhra Pradesh</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Chandigarh</option>
+                                <option>Chhattisgarh</option>
+                                <option>Dadra and Nagar Haveli</option>
+                                <option>Daman and Diu</option>
+                                <option>Delhi</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jammu and Kashmir</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Lakshadweep</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur	</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Odisha</option>
+                                <option>Puducherry</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Tripura</option>
+                                <option>Uttar Pradesh	</option>
+                                <option>Uttarakhand</option>
+                                <option>West Bengal</option>
                               </select>
                             </div>
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">City</label>
-                              <input type="text" class="form-control" placeholder="City" name="city" >
+                              <input type="text" class="form-control" placeholder="City" name="city" #city="ngModel" [(ngModel)]="disaster.city" >
                             </div>
                             <div class="form-group col-md-3">
                               <label  class="col-form-label">Zip</label>
-                              <input type="text" class="form-control" placeholder="Zip" name="zip">
+                              <input type="text" class="form-control" placeholder="Zip" name="zip" #zip="ngModel" [(ngModel)]="disaster.zip">
                             </div>
                           </div>
 
                           <div class="form-group">
                             <label  class="col-form-label">Address</label>
-                            <input type="text" class="form-control" name="address" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control" name="address" placeholder="Apartment, studio, or floor" #address="ngModel"
+                                   [(ngModel)]="disaster.address">
                           </div>
                         </div>
                       </div>
                   </div>
                   <div class="tab-pane fade" id="photo" role="tabpanel" aria-labelledby="profile-tab1">
                     <div class="card-header">Cover Image</div><br>
-                    <input type="file" name="file1" class="form-control">
+                    <input type="file" name="cover_image" class="form-control" #cover_image="ngModel"
+                    [(ngModel)] = "disaster.cover_image">
                     <div class="clearfix"></div><br><br><hr><hr>
 
                       <div class="card-header">Photo</div><br>
                     <div class="form-row">
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 1</label>
-                        <input type="file" class="form-control" name="file2">
+                        <input type="file" class="form-control" name="photo_1" #photo_1="ngModel" [(ngModel)]="disaster.photo_1">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label" >Photo 2</label>
-                       <input type="file" name="file3" class="form-control">
+                       <input type="file" name="photo_2" class="form-control" #photo_2="ngModel" [(ngModel)]="disaster.photo_2">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 3</label>
-                        <input type="file" name="file4" class="form-control" >
+                        <input type="file" name="photo_3" class="form-control" #photo_3="ngModel" [(ngModel)]="disaster.photo_3" >
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Photo 4</label>
-                        <input type="file" class="form-control"  name="file5">
+                        <input type="file" class="form-control"  name="photo_4" #photo_4="ngModel" [(ngModel)]="disaster.photo_4">
                       </div>
                     </div><br><br>
 
@@ -136,22 +176,23 @@
                     <div class="form-row">
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Document 1</label>
-                        <input type="file" class="form-control" name="file2">
+                        <input type="file" class="form-control" name="document_1" #document_1="ngModel" [(ngModel)] = "disaster.document_1">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label" >Document 2</label>
-                        <input type="file" name="file3" class="form-control">
+                        <input type="file" name="document_2" class="form-control" #document_2="ngModel" [(ngModel)]="disaster.document_2">
                       </div>
                       <div class="form-group col-md-3">
                         <label  class="col-form-label">Document 3</label>
-                        <input type="file" name="file4" class="form-control" >
+                        <input type="file" name="document_3" class="form-control" #document_3="ngModel" [(ngModel)]="disaster.document_3">
                       </div>
 
                     </div>
                     <hr>
-                    <button type="submit" class="btn btn-primary btn-lg " onclick="" >Submit
+                    <input type="submit" class="btn btn-primary btn-lg" (click)="add_Disaster()" value="Submit">
+                    <!--<button type="submit" class="btn btn-primary btn-lg " (click)="ADD_Disaster" >Submit-->
                       <i class="icon icon-send"></i>
-                    </button>
+                    <!--</button>-->
 
                   </div>
                 </div>

@@ -15,61 +15,50 @@
 <div class="app-wrap">
   <app-header></app-header>
   <div class="app-container">
-    <!-- BEGIN .app-side -->
     <app-side-menu></app-side-menu>
-    <!-- BEGIN .app-main -->
     <div class="app-main">
-      <!-- BEGIN .main-heading -->
-
-      <!-- END: .main-heading -->
-      <!-- BEGIN .main-content -->
       <div class="main-content">
         <div class="row gutters">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="card text-white " style="background: linear-gradient(-20deg,#A8D0E6,#374785)">
-
               <div class="card-body">
                 <a routerLink="/add-category"><img src="../../../assets/img/icon/plus.png"></a>
                 <h4 class="card-title " align="right" style="margin-top: -48px; ">ADD CATEGORIES</h4>
-
               </div>
             </div>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
             <div class="card text-white " style="background: linear-gradient(-60deg,#f8e9a1,#f76c6c)">
-
               <div class="card-body">
                 <a routerLink="/catergories"><img src="../../../assets/img/icon/manage.png"></a>
                 <h4 class="card-title " align="right" style="margin-top: -48px; ">MANAGE CATEGORIES</h4>
-
               </div>
             </div>
           </div>
-
         </div>
-
         <div class="row gutters">
           <div class="wrapper fadeInDown">
-
-
             <div id="formContent">
-              <!-- Tabs Titles -->
               <h2 class="active"> Add CATEGORY </h2><hr><hr>
               <div class="row">
-<!-- 
                 <form >
                   <div class="col-sm-6">
-                    <input type="text" id="" class="fadeIn second"  formControlName="name" name="categories_name" placeholder="Enter Your category Name" required="">
+                    <input type="text" id="" class="fadeIn second" name="categories_name"
+                           placeholder="Enter Your category Name" #categories_name="ngModel"
+                           [(ngModel)]="categories.categories_name">
                   </div>
-                  <div class="col-sm-6"style="margin-top: -67px;margin-left: 500px;">
-                    <input type="file" id="file" class="fadeIn third"   name="categories_img" placeholder="Cover Image " required="">
+                  <div class="col-sm-6" style="margin-top: -67px;margin-left: 500px;">
+                    <input type="file" class="fadeIn third" name="categories_img" #categories_img="ngModel"
+                           placeholder="Cover Image " [(ngModel)]="categories.categories_img">
                   </div>
                   <div class="">
-                    <textarea class="fadeIn"  rows="10" placeholder=" Enter Description" name="categories_description" style="margin-left: 0px;"></textarea>
+                    <textarea class="fadeIn"  rows="10" placeholder=" Enter Description" #categories_description="ngModel"
+                              name="categories_description" style="margin-left: 0px;" [(ngModel)] = categories.categories_description>
+                    </textarea>
                   </div>
-                  <input type="submit" class="fadeIn fourth" value="Submit" (click)="category()" >
+                  <input type="submit" class="fadeIn fourth" value="Submit" (click)="add_category()">
 
-                </form> -->
+                </form>
 
 
               </div>

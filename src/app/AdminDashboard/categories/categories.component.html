@@ -65,12 +65,18 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>s233jdmbfdbfjdi</td>
-                    <td>Eduction</td>
-                    <td>true</td>
-                    <td><img src="../../../assets/img/user.png" class="img-30" alt="product" /></td>
+                  <tr *ngFor="let category of categories_table; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{category._id}}</td>
+                    <td>{{category.categories_name}}</td>
+                    <td>{{category.categories_status}}
+                      <div class="toggle-switch tr">
+                        <input type="checkbox" class="check" checked>
+                        <b class="b switch"></b>
+                        <b class="b track"></b>
+                      </div>
+                    </td>
+                    <td>{{category.categories_img}}</td>
                     <td>
                       <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
                       <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink=""></a>

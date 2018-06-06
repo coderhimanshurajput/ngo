@@ -24,13 +24,12 @@
 
         loginapi(){
         this.http.post<any>(this.API_Call, this.login).subscribe((response)=>{
-          console.log(response.success);
-          console.log(response.user.token);
+         /* console.log(response.success);
+          console.log(response.user.token);*/
           if(response.success === true){
             this.router.navigate(['/dashboard']);
             this.cookies.set("token", response.user.token, 1/48)
           }
-
         })
       }
 

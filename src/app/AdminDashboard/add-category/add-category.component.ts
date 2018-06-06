@@ -13,17 +13,27 @@ import {Global} from '../../share/service/global';
 })
 export class AddCategoryComponent implements OnInit {
   private previousUrl: string;
-  private API_Call = `${Global.API_Call}/admin/addCategories`;
+  categories: any = {};
+
+  /* add category API */
+  private Category_Api = `${Global.API_Call}/admin/addCategories`;
 
   constructor(
      public router: Router,
      private http: HttpClient,
-  ) {
-    router.events.filter(event => event instanceof NavigationEnd)
-      .subscribe((e: any) => {
-        this.previousUrl = e.url ;
-      });
+  ) {}
+
+  /* Add category Function */
+  add_category(){
+    this.http.post<any>(this.Category_Api , this.categories) .subscribe((response)=> {
+      if(response.success === true){
+        this.router.navigate(['/catergories']);
+      }
+    })
   }
+
+     /* Get category in the table  Function */
+
 
   ngOnInit() {
   }

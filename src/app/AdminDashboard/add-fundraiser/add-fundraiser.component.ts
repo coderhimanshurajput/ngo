@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Global} from "../../share/service/global";
+import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-add-fundraiser',
@@ -6,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-fundraiser.component.scss']
 })
 export class AddFundraiserComponent implements OnInit {
+  Fundraiser:any ={};
+  private Fundraiser_API = `${Global.API_Call}/admin/addFundraisers`;
+  constructor(
+    private router:Router,
+    private http: HttpClient
+  ) { }
 
-  constructor() { }
+  AddFundraiser(){
+    this.http.post<any>(this.Fundraiser_API,this.Fundraiser).subscribe((response)=>{
+      console.log(response);
+    });
+  }
 
   ngOnInit() {
   }

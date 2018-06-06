@@ -1532,7 +1532,7 @@ ul.order-list li {
   position: relative;
   width: 40px;
   height: 20px;
-  background-color: #24305E;
+  background-color: #028007;
   overflow: hidden; }
   .toggle-switch .check {
     position: absolute;
@@ -1546,7 +1546,7 @@ ul.order-list li {
     z-index: 6;
     margin: 0; }
     .toggle-switch .check:checked ~ .track {
-      box-shadow: inset 0 0 0 20px #ff3e61; }
+      box-shadow: inset 0 0 0 20px #ff0018; }
     .toggle-switch .check:checked ~ .switch {
       right: 2px;
       left: 20px;
@@ -1577,7 +1577,7 @@ ul.order-list li {
       position: absolute;
       content: "\e901";
       font-size: .75rem;
-      color: #24305E;
+      color: #028007;
       font-family: 'icomoon';
       line-height: 100%;
       top: 2px;
@@ -1591,9 +1591,8 @@ ul.order-list li {
     transition: 0.35s cubic-bezier(0.7, 0.1, 0.15, 0.8);
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05); }
   .toggle-switch.tr {
-    position: absolute;
-    top: 12px;
-    right: 15px; }
+    position: relative;
+    float: right; }
   .toggle-switch.tr-xl {
     position: absolute;
     top: 16px;
