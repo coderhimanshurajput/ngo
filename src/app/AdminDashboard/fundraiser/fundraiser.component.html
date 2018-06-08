@@ -61,31 +61,35 @@
                     <th>Name</th>
                     <th>Start Date</th>
                     <th>End Date</th>
-                    <th>NGO</th>
-                    <th>Verified</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>City</th>
                     <th>Status</th>
                     <th>Goal Amount</th>
-                    <th>Collection</th>
                     <th>Action</th>
-
-
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Assam</td>
-                    <td>30djb</td>
-                    <td>446dd</td>
-                    <td>nss</td>
-                    <td>True</td>
-                    <td>true</td>
-                    <td>100242</td>
-                    <td>12</td>
+                  <tr *ngFor="let fund of fundraiser_table; let i= index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{fund.fundraiser_name}}</td>
+                    <td>{{fund.start_date | date}}</td>
+                    <td>{{fund.end_date | date}}</td>
+                    <td>{{fund.country}}</td>
+                    <td>{{fund.state}}</td>
+                    <td>{{fund.city}}</td>
+                    <td>{{fund.status}}
+                      <div class="toggle-switch tr">
+                        <input type="checkbox" class="check">
+                        <b class="b switch"></b>
+                        <b class="b track"></b>
+                      </div>
+                    </td>
+                    <td>{{fund.goal_amount}}</td>
                     <td>
-                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
-                      <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink=""></a>
-                      <!--<a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo" routerLink=""></a>-->
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink="" (click)="getfunddetails(fund._id)" ></a>
+                      <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink="" (click)="deleteFundraiser(fund._id)"></a>
+                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo" routerLink=""></a>
 
                     </td>
                   </tr>
@@ -96,20 +100,10 @@
             </div>
           </div>
         </div>
-
-
-
-
       </div>
-
-
     </div>
-    <!-- END: .app-main -->
   </div>
-  <!-- END: .app-container -->
-  <!-- BEGIN .main-footer -->
   <app-footer></app-footer>
-  <!-- END: .main-footer -->
 </div>
 
 <!--<<======================= Information Model with popup ============================>>-->
@@ -136,13 +130,13 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="home-tab">
             <h6>Cover Image</h6>
-            <img src="../../../assets/img/ngo.jpg"/><hr><br>
+            <img ngModel="" src=""/><hr><br>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
               <div class="card top-red-bdr">
                 <div class="card-body">
                   <div class="card-header" style="color: black">Short Description</div>
-                  <p class="card-text">
-                  The fliiding had affected hfgdhjgh dfh dhfgdh dfs gs sdgsgsdgjsdgbjsd hfshshfsfbssfhsbfbysifiosfbsfbshibofhsfbysiubewognofmnyfg.
+                  <p class="card-text" >
+                    {{detail.result.short_description}}
                   </p>
                 </div>
               </div>
@@ -154,7 +148,7 @@
                 <div class="card-body">
                   <div class="card-header">Start Date</div>
                   <p class="card-text">
-                   12/2/2008
+                   {{detail.result.start_date | date}}
                   </p>
                 </div>
               </div>
@@ -164,7 +158,7 @@
                 <div class="card-body">
                   <div class="card-header">End Date</div>
                   <p class="card-text">
-                    12/2/2008
+                   {{detail.result.end_date | date}}
                   </p>
                 </div>
               </div>
@@ -174,7 +168,7 @@
                 <div class="card-body">
                   <div class="card-header">Goal Amount</div>
                   <p class="card-text">
-                    12/2/2008
+                    {{detail.result.goal_amount}}
                   </p>
                 </div>
               </div>
@@ -185,8 +179,7 @@
                 <div class="card-body">
                   <div class="card-header">Description</div>
                   <p class="card-text">
-                    The fliiding had affected hfgdhjgh dfh dhfgdh dfs gs sdgsgsdgjsdgbjsd hfshshfsfbssfhsbfbysifiosfbsfbshibofhsfbysiubewognofmnyfg.
-                  rgopjjmjugmhunuihfuvpanmghp gihpisngiiniogmnhghiosrynbshsn sghiohpgnsmvo
+                    {{detail.result.fundraiser_description}}
                   </p>
                 </div>
               </div>
@@ -307,12 +300,9 @@
           <div class="modal-footer">
             <input type="submit" class=" btn btn-info" value="Update">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-
           </div>
         </form>
-
       </div>
-
     </div>
   </div>
 </div>

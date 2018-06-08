@@ -27,7 +27,13 @@
                     <th scope="row">{{i + 1}}</th>
                     <td>{{user.first_name +" " +user.last_name}} </td>
                     <td>{{user.email}}</td>
-                    <td>{{user.verified}}</td>
+                    <td>{{user.verified}}
+                      <div class="toggle-switch tr">
+                        <input type="checkbox" class="check">
+                        <b class="b switch"></b>
+                        <b class="b track"></b>
+                      </div>
+                    </td>
                     <td>{{user.reg_type}}</td>
                     <td>{{user.mobile}}</td>
                     <td>{{user.Donation}}</td>

@@ -19,6 +19,10 @@ export class AddFundraiserComponent implements OnInit {
   AddFundraiser(){
     this.http.post<any>(this.Fundraiser_API,this.Fundraiser).subscribe((response)=>{
       console.log(response);
+
+      if(response.success === true){
+        this.router.navigate(['fundraiser']);
+      }
     });
   }
 
