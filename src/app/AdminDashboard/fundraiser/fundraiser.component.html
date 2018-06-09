@@ -87,9 +87,9 @@
                     </td>
                     <td>{{fund.goal_amount}}</td>
                     <td>
-                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink="" (click)="getfunddetails(fund._id)" ></a>
-                      <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink="" (click)="deleteFundraiser(fund._id)"></a>
-                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo" routerLink=""></a>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add"  (click)="getfunddetails(fund._id)" ></a>
+                          <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo"  ></a>
+                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo"></a>
 
                     </td>
                   </tr>
@@ -237,22 +237,22 @@
 
 
 <!--<<<<========================================== Delete Model With Popup =============================>>-->
-<div class="modal fade" id="Data_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade" id="Data_delete" tabindex="-1" *ngFor="let fund of fundraiser_table;" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Delete Categories</h5>
+        <h5 class="modal-title">Delete Fundraiser</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Do You Want to delete Categories ??</p>
+        <p>Do You Want to delete Fundraiser ??</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Yes</button>
+        <button type="button" id="yes" class="btn btn-info" data-dismiss="modal" (click)="deleteFundraiser(fund._id)">Yes</button>
 
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" id="no" value="0" class="btn btn-secondary" data-dismiss="modal">No</button>
 
       </div>
     </div>
@@ -262,10 +262,10 @@
 <!--<<<<================================ Update model With Popup =========================>>>>>-->
 
 <div class="modal fade" id="Data_update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Update Information Categories</h5>
+        <h5 class="modal-title">Update Fundraiser Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -280,17 +280,38 @@
           </div>
           <hr>
           <div class="form-group row gutters">
-            <label class="col-sm-3 col-form-label">Category Name</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="name" placeholder="Enter Your Category Name">
+            <div class="col-sm-6">
+              <label>Fundraiser Name</label>
+                <input type="text" class="form-control"  name="" placeholder="Enter Your Fundraiser Name">
+            </div>
+            <div class="col-sm-6">
+              <label>Fundraiser Description</label>
+                <input type="text" class="form-control "  name="" placeholder="Enter Your  Fundraiser Short Description">
             </div>
           </div>
           <div class="form-group row gutters">
-            <label class="col-sm-3 col-form-label">Category Description</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control "  name="description" placeholder="Enter Your Description">
+            <div class="col-sm-4">
+              <label>Fundraiser Start Date	</label>
+              <input type="text" bsDatepicker class="form-control" name="" placeholder="Enter Your Start Date">
+            </div>
+            <div class="col-sm-4">
+              <label>Fundraiser End Date	</label>
+              <input type="text" bsDatepicker class="form-control "  name="" placeholder="Enter Your End Date">
+            </div>
+            <div class="col-sm-4">
+              <label>Fundraiser Goal Ammount</label>
+              <input type="number" class="form-control "  name="" plaeceholder="Enter Your Goal Ammount">
             </div>
           </div>
+          <div class="form-group row gutters">
+            <div class="col-sm-6">
+              <label>Fundraiser Long Description</label>
+              <textarea class="form-control "  name="description" placeholder="Enter Your Long Description"></textarea>
+            </div>
+          </div>
+
+
+
           <div class="form-group row gutters">
             <label class="col-sm-3 col-form-label">Change Cover Image</label>
             <div class="col-sm-9">
@@ -298,7 +319,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <input type="submit" class=" btn btn-info" value="Update">
+            <button class="btn btn-info" (click)="UpdateFundriser(id)">Update</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </form>
