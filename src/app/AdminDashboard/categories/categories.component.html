@@ -78,9 +78,9 @@
                     </td>
                     <td>{{category.categories_img}}</td>
                     <td>
-                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
-                      <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink=""></a>
-                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo" routerLink=""></a>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" (click)="Get_detalis(category._id)"></a>
+                      <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" (click)="deleteCat(category._id)"></a>
+                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo"  ></a>
 
                     </td>
                   </tr>
@@ -113,7 +113,7 @@
   <div class="modal-dialog modal-lg mt-0 mb-0" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel2">Eduction Information</h5>
+        <h5 class="modal-title" id="exampleModalLabel2">Categories Information</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -131,10 +131,11 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="data" role="tabpanel" aria-labelledby="home-tab">
           <h6>Cover Image</h6>
-            <img src="../../../assets/img/ngo.jpg"/>
-
-
+            {{catDetails.result.categories_img}}
           </div>
+            {{catDetails.result.categories_name}}
+
+            {{catDetails.result.categories_description}}
           <div class="tab-pane fade" id="donations" role="tabpanel" aria-labelledby="profile-tab">
 
               <div class="card">
@@ -187,7 +188,8 @@
 
 
 <!--<<<<========================================== Delete Model With Popup =============================>>-->
-<div class="modal fade" id="Data_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade" id="Data_delete" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -199,7 +201,7 @@
       <div class="modal-body">
         <p>Do You Want to delete Categories ??</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" >
         <button type="button" class="btn btn-info" data-dismiss="modal">Yes</button>
 
         <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
@@ -248,7 +250,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <input type="submit" class=" btn btn-info" value="Update">
+           <button type="submit" class="btn btn-info" (click)="updateCat(catDetails.result.id)">Yes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
 
           </div>

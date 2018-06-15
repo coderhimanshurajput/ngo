@@ -12,9 +12,13 @@
               <div class="card-body">
                 <form>
                   <div class="form-group">
-                    <textarea  class="form-control" rows="20" name="tac" placeholder="Terms And Conditions"></textarea>
+                    <textarea  class="form-control" rows="20" name="tac" placeholder="Terms And Conditions"
+                               aria-required="true" data-ok="false" name="privacyandpolicy" id="p"
+                               #privacyandpolicy="ngModel" [(ngModel)]="GetPrivacy.privacyandpolicy" >
+
+                    </textarea>
                   </div>
-                  <input type="submit" value="submit" class="btn btn-primary">
+                  <input type="submit" value="submit" aria-disabled="true" aria-describedby="pErr" class="btn btn-primary" (click)="privacy()" >
                 </form>
               </div>
 

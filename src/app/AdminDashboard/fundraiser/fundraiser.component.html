@@ -80,7 +80,7 @@
                     <td>{{fund.city}}</td>
                     <td>{{fund.status}}
                       <div class="toggle-switch tr">
-                        <input type="checkbox" class="check">
+                        <input type="checkbox" class="check" >
                         <b class="b switch"></b>
                         <b class="b track"></b>
                       </div>
@@ -88,8 +88,8 @@
                     <td>{{fund.goal_amount}}</td>
                     <td>
                       <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add"  (click)="getfunddetails(fund._id)" ></a>
-                          <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo"  ></a>
-                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo"></a>
+                          <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" (click)="deleteFundraiser(fund._id)" ></a>
+                      <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo"(click)="getfunddetails(fund._id)" ></a>
 
                     </td>
                   </tr>
@@ -237,7 +237,7 @@
 
 
 <!--<<<<========================================== Delete Model With Popup =============================>>-->
-<div class="modal fade" id="Data_delete" tabindex="-1" *ngFor="let fund of fundraiser_table;" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade" id="Data_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -250,7 +250,7 @@
         <p>Do You Want to delete Fundraiser ??</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="yes" class="btn btn-info" data-dismiss="modal" (click)="deleteFundraiser(fund._id)">Yes</button>
+        <button type="button" id="yes" class="btn btn-info" data-dismiss="modal">Yes</button>
 
         <button type="button" id="no" value="0" class="btn btn-secondary" data-dismiss="modal">No</button>
 
@@ -282,31 +282,40 @@
           <div class="form-group row gutters">
             <div class="col-sm-6">
               <label>Fundraiser Name</label>
-                <input type="text" class="form-control"  name="" placeholder="Enter Your Fundraiser Name">
+                <input type="text" value="{{detail.result.fundraiser_name}}" class="form-control"
+                       name="fundraiser_name" #fundraiser_name="ngModel" [(ngModel)]="detail.fundraiser_name" placeholder="Enter Your Fundraiser Name" >
             </div>
             <div class="col-sm-6">
               <label>Fundraiser Description</label>
-                <input type="text" class="form-control "  name="" placeholder="Enter Your  Fundraiser Short Description">
+                <input type="text" class="form-control " value="{{detail.result.short_description}}"
+                       name="short_description" #short_description="ngModel" [(ngModel)]="detail.short_description" placeholder="Enter Your  Fundraiser Short Description">
             </div>
           </div>
           <div class="form-group row gutters">
             <div class="col-sm-4">
               <label>Fundraiser Start Date	</label>
-              <input type="text" bsDatepicker class="form-control" name="" placeholder="Enter Your Start Date">
+              <input type="text" bsDatepicker class="form-control" value="{{detail.result.start_date | date}}"
+                     name="start_date" #start_date="ngModel" [(ngModel)]="detail.start_date" placeholder="Enter Your Start Date">
             </div>
             <div class="col-sm-4">
               <label>Fundraiser End Date	</label>
-              <input type="text" bsDatepicker class="form-control "  name="" placeholder="Enter Your End Date">
+              <input type="text" bsDatepicker class="form-control "  value="{{detail.result.end_date | date}}"
+                     name="end_date" #end_date="ngModel" [(ngModel)]="detail.end_date" placeholder="Enter Your End Date">
             </div>
             <div class="col-sm-4">
               <label>Fundraiser Goal Ammount</label>
-              <input type="number" class="form-control "  name="" plaeceholder="Enter Your Goal Ammount">
+              <input type="number" class="form-control " value="{{detail.result.goal_amount}}"
+                     name="goal_amount" #goal_amount="ngModel" [(ngModel)]="detail.goal_amount"
+                     plaeceholder="Enter Your Goal Ammount">
             </div>
           </div>
           <div class="form-group row gutters">
             <div class="col-sm-6">
               <label>Fundraiser Long Description</label>
-              <textarea class="form-control "  name="description" placeholder="Enter Your Long Description"></textarea>
+              <textarea class="form-control "   name="fundraiser_description"  value={{detail.result.fundraiser_description}}
+                  #fundraiser_description="ngModel" [(ngModel)]="detail.fundraiser_description" placeholder="Enter Your Long Description">
+
+              </textarea>
             </div>
           </div>
 
@@ -319,11 +328,13 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-info" (click)="UpdateFundriser(id)">Update</button>
+            <button class="btn btn-info" (click)="UpdateFundriser(detail.result._id)" data-dismiss="modal" >Update</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </form>
       </div>
+      <!--<%= typeof msg != 'undefined' ? msg :'' %>-->
     </div>
   </div>
 </div>
+

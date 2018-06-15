@@ -38,7 +38,8 @@
                     <td>{{user.mobile}}</td>
                     <td>{{user.Donation}}</td>
                     <td>
-                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2"
+                         data-whatever="@mdo" title="Information Add" (click)="UserDetails(user._id)"></a>
                     </td>
                   </tr>
 
@@ -73,20 +74,20 @@
         </button>
       </div>
       <div class="card-body">
-        <div class="card-header" align="center"><h2>Himanshu</h2></div><br>
+        <div class="card-header" align="center"><h2>{{userD.result.first_name +" " +userD.result.last_name}} </h2></div><br>
         <div class="row gutters">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <pre><b>User Name:     </b><span>Himanshu Rajput</span> </pre>
-            <pre><b>Email Id :     </b><span>HimanshuRajput@gmail.com</span> </pre>
-            <pre><b>Phone Number : </b><span>99990087978</span> </pre>
+            <pre><b>User Name:     </b><span>{{userD.result.first_name +" " +userD.result.last_name}} </span> </pre>
+            <pre><b>Email Id :     </b><span>{{userD.result.email}}</span> </pre>
+            <pre><b>Phone Number : </b><span>{{userD.result.mobile}}</span> </pre>
 
 
           </div>
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-            <pre><b> User ID : </b><span>vrgng45r7g8r4g546ejiem84455</span> </pre>
-            <pre><b> Created Date :</b> <span>dec 5 2017</span> </pre>
-            <pre><b> Regs. Type :</b> <span>Web Type</span> </pre>
-            <pre><b> Total Donations :</b> <span>4545545454613000</span> </pre>
+            <pre><b> User ID : </b><span>{{userD.result._id}}</span> </pre>
+            <pre><b> Created Date :</b> <span>{{userD.result.createdAt | date:"EEEE, MMMM d, y,h:mm a"}}</span> </pre>
+            <pre><b> Regs. Type :</b> <span>{{userD.result.reg_type}}</span> </pre>
+            <pre><b> Total Donations :</b> <span>{{userD.result.amount}}</span> </pre>
 
           </div>
           </div><br><br>
@@ -96,25 +97,24 @@
               <tr>
                 <th>#</th>
                 <th>Txn.ID</th>
-                    <th>Type</th>
                     <th>Category</th>
-                    <th>Mode</th>
                     <th>Amount</th>
                     <th>Status</th>
-                    <th>Action</th>
-
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>City</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>s233jdmbfdbfjdi</td>
-                    <td>Eduction</td>
-                    <td>Eduction</td>
-                    <td>online</td>
-                    <td>450125665</td>
-                    <td>true</td>
-                    <td>Pass</td>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{userD.result.verified}}</td>
+                    <td>{{userD.result.country}}</td>
+                    <td>{{userD.result.state}}</td>
+                    <td>{{userD.result.city}}</td>
                   </tr>
 
                   </tbody>

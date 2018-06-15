@@ -64,7 +64,7 @@
                     <td>{{dis.country}}</td>
                     <td>{{dis.state}}</td>
                     <td>
-                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" routerLink=""></a>
+                      <a class="mdi mdi-information mdi-24px" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo" title="Information Add" (click)="FIND_DISASTER(dis._id)"></a>
                       <a class="mdi mdi-delete-forever mdi-24px" title="Delete your data " data-toggle="modal" data-target="#Data_delete" data-whatever="@mdo" routerLink=""></a>
                       <a class="mdi mdi-update mdi-24px" title="Update your data" data-toggle="modal" data-target="#Data_update" data-whatever="@mdo" routerLink=""></a>
 

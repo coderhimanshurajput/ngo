@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {HttpClientModule , HttpInterceptor, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {CookieService} from "ngx-cookie-service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,9 +28,8 @@ import { PrivacyandpolicyComponent } from './AdminDashboard/privacyandpolicy/pri
 import { AddCategoryComponent } from './AdminDashboard/add-category/add-category.component';
 import { AddDisasterComponent } from './AdminDashboard/add-disaster/add-disaster.component';
 import { AddFundraiserComponent } from './AdminDashboard/add-fundraiser/add-fundraiser.component';
-import { FormsModule } from '@angular/forms';
-// import { AuthInterceptor ,ABC } from "../config";
-import {FormControl, Validators} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {ToastModule} from "ng2-toastr";
 
 @NgModule({
   declarations: [
@@ -60,6 +60,9 @@ import {FormControl, Validators} from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
     BsDatepickerModule.forRoot(),
   ],
   providers: [

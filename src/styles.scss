@@ -5,3 +5,25 @@
 @import "assets/fonts/icomoon/icomoon.css";
 @import "assets/vendor/chartist/css/chartist.min.css";
 @import "assets/vendor/chartist/css/chartist-custom.css";
+@import "~ng2-toastr/bundles/ng2-toastr.min.css";
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #24305E;
+  border-bottom: 16px solid #24305E;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

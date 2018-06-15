@@ -29,9 +29,11 @@
     "http-client": "^4.3.1",
     "mdi": "^2.1.19",
     "ng2-datepicker": "^2.2.5",
+    "ng2-toastr": "^4.1.2",
     "ngx-bootstrap": "^2.0.2",
     "ngx-cookie-service": "^1.0.10",
     "rxjs": "^5.5.10",
+    "toastr": "^2.1.4",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

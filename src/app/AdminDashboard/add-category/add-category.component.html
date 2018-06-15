@@ -41,12 +41,24 @@
             <div id="formContent">
               <h2 class="active"> Add CATEGORY </h2><hr><hr>
               <div class="row">
-                <form >
+                <form [(formGroup)]="form" >
                   <div class="col-sm-6">
                     <input type="text" id="" class="fadeIn second" name="categories_name"
                            placeholder="Enter Your category Name" #categories_name="ngModel"
                            [(ngModel)]="categories.categories_name">
                   </div>
+                  <div *ngIf="categories_name.invalid && (categories_name.dirty || categories_name.touched)"
+                       class="alert alert-danger"></div>
+
+                    <div *ngIf="categories_name.errors.required">
+                      Name is required.
+                    </div>
+                    <div *ngIf="categories_name.errors.minlength">
+                      Name must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="categories_name.errors.forbiddenName">
+                      Name cannot be Bob.
+                    </div>
                   <div class="col-sm-6" style="margin-top: -67px;margin-left: 500px;">
                     <input type="file" class="fadeIn third" name="categories_img" #categories_img="ngModel"
                            placeholder="Cover Image " [(ngModel)]="categories.categories_img">
@@ -67,7 +79,6 @@
 
           </div>
         </div>
-
 
 
 

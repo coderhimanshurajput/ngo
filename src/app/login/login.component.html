@@ -11,9 +11,9 @@
                   <h5>NGO Help</h5>
                 </a>
                 <div class="input-group" >
-                  <span class="input-group-addon" id="username"><i class="icon-account_circle"></i></span>
-                  <input type="text" class="form-control" placeholder="Username"
-                         name="email" #email="ngModel" required="" [(ngModel)]="login.email">
+                  <span class="input-group-addon"><i class="icon-account_circle"></i></span>
+                  <input type="text" class="form-control" placeholder="Username" id="username"
+                       ngClass="email"  name="email" #email="ngModel" required="" [(ngModel)]="login.email">
                 </div><br>
                 <div class="input-group" *ngIf="email.touched && !email.valid">
                   <div class="alert alert-danger" *ngIf="email.errors.required">
@@ -27,7 +27,7 @@
                 <div class="input-group">
                   <span class="input-group-addon"><i class="icon-verified_user"></i></span>
 
-                  <input type="password" placeholder="Password" class="form-control"
+                  <input type="password" placeholder="Password" class="form-control" id="password"
                          name="password" #password="ngModel" [(ngModel)]="login.password" required>
                 </div><br>
                 <div class="input-group" *ngIf="password.touched && !password.valid">
@@ -56,6 +56,7 @@
     </div>
   </div>
 </div>
+<button (click)="test1()">Click</button>
 
 <app-footer></app-footer>
 

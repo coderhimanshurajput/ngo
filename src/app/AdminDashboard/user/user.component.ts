@@ -10,9 +10,13 @@ import {Global} from "../../share/service/global";
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+
+
  private API_CALL = `${Global.API_Call}/users/getusers`;
+ private API_User_Details = `${Global.API_Call}/users/UserDetails`;
 
   usertabledata =[];
+  userD:any={};
   constructor(
     private http: HttpClient
   ) { }
@@ -25,6 +29,15 @@ export class UserComponent implements OnInit {
         console.log(this.usertabledata);
       })
 
+    }
+    UserDetails(_id){
+      const id={id:_id};
+      console.log(id);
+      this.http.post<any>(this.API_User_Details,id).subscribe((response)=>{
+        this.userD=response;
+      },(error)=>{
+        console.log(error)
+      })
     }
 
   ngOnInit() {
