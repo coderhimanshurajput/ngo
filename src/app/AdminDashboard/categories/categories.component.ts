@@ -11,6 +11,7 @@ import {ToastsManager} from "ng2-toastr";
 export class CategoriesComponent implements OnInit {
   categories_table=[] ;
   catDetails:any={};
+  categories_img='';
   private get_Categories_API = `${Global.API_Call}/admin/getCategory`;
   private CAT_Details_API = `${Global.API_Call}/admin/CategoriesDetails`;
   private API_CAT_Delete = `${Global.API_Call}/admin/CategoriesDelete`;
@@ -40,13 +41,13 @@ export class CategoriesComponent implements OnInit {
   }
 
   deleteCat(_id){
-    let id = {id:_id}
     console.log(id);
-
+    let id = {id:_id}
     if(confirm("Are You sure ??")){
       this.http.post<any>(this.API_CAT_Delete,id).subscribe((response)=>{
         this.toaster.success("Detele Categories");
-        console.log(response)
+
+        console.log("himanshu"+response)
 
       },(error)=>{
         console.log(error);
@@ -55,8 +56,9 @@ export class CategoriesComponent implements OnInit {
 
   }
 
-  updateCat(_id){
-    let id = {id:_id};
+  updateCat(categories_tableObj){
+    console.log(categories_tableObj[0]._id);
+    let id = {id:categories_tableObj[0]._id};
     console.log(id);
     if(confirm("Are You sure????")){
       this.http.post<any>(this.API_CAT_Update,id).subscribe((response)=>{

@@ -4,9 +4,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
 import {HttpClientModule , HttpInterceptor, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {CookieService} from "ngx-cookie-service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
